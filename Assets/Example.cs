@@ -1,16 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 
-public class Example : MonoBehaviour {
+public class Example : MonoBehaviour
+{
     
     public Text OutputText;
     public Button LoginButton;
     public Button GetTokenButton;
 
-	// Use this for initialization
-	void Start () {
-	    LoginButton.onClick.AddListener(OnLoginButtonPress);
+    // Use this for initialization
+    void Start()
+    {
+        LoginButton.onClick.AddListener(OnLoginButtonPress);
         GetTokenButton.onClick.AddListener(OnGetTokenButtonPress);
 
         LoginWithAmazonAuthManager.LoginOnSuccess += OnLoginSuccess;
@@ -19,22 +21,24 @@ public class Example : MonoBehaviour {
         LoginWithAmazonAuthManager.GetTokenOnSuccess += OnGetTokenSuccess;
         LoginWithAmazonAuthManager.GetTokenOnFailure += OnGetTokenError;
         LoginWithAmazonAuthManager.GetTokenOnCancel += OnGetTokenCancel;
-	}
+    }
 	
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update()
+    {
 	
-	}
+    }
 
     void OnLoginButtonPress()
     {
         OutputText.text = "OnLoginButtonPress";
         LoginWithAmazonAuthManager.Authorize();
     }
-    
+
     void OnGetTokenButtonPress()
     {   
-        if(LoginWithAmazonAuthManager.IsAuthed()) {
+        if (LoginWithAmazonAuthManager.IsAuthed())
+        {
             LoginWithAmazonAuthManager.GetToken();
         } else
         {
@@ -54,14 +58,14 @@ public class Example : MonoBehaviour {
 
     void OnLoginError(string error)
     {
-        OutputText.text = "Login Exception: "+ error;
+        OutputText.text = "Login Exception: " + error;
     }
 
     void OnGetTokenError(string error)
     {
-        OutputText.text = "GetToken Exception: "+ error;
+        OutputText.text = "GetToken Exception: " + error;
     }
-    
+
     void OnLoginSuccess()
     {
         OutputText.text = "Login successful";
@@ -69,7 +73,7 @@ public class Example : MonoBehaviour {
 
     void OnGetTokenSuccess(string token)
     {
-        OutputText.text = "OAuth token: "+ token;
+        OutputText.text = "OAuth token: " + token;
     }
     
 }

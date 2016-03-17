@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.amazon.identity.auth"
-    android:versionName="4.0.2" >
-    
-    <application>
-      <activity android:name="com.amazon.identity.auth.device.authorization.AuthorizationActivity"
-        android:theme="@android:style/Theme.NoDisplay"
-        android:allowTaskReparenting="true"
-        android:launchMode="singleTask">
-        <intent-filter>
-          <action android:name="android.intent.action.VIEW" />
-          <category android:name="android.intent.category.DEFAULT" />
-          <category android:name="android.intent.category.BROWSABLE" />
-          <!-- android:host must use the full package name
-          found in Manifest General Attributes -->
-          <data android:host="com.example.appid"
-            android:scheme="amzn" />
-        </intent-filter>
-      </activity>
-    </application>
-</manifest>    
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.amazon.identity.auth" android:versionName="4.0.2">
+	<application>
+		<activity android:name="com.amazon.identity.auth.device.authorization.AuthorizationActivity" android:theme="@android:style/Theme.NoDisplay" android:allowTaskReparenting="true" android:launchMode="singleTask">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<!-- android:host must use the full package name
+					found in Manifest General Attributes -->
+				<data android:host="com.example.appid" android:scheme="amzn" />
+			</intent-filter>
+		</activity>
+	</application>
+</manifest>
