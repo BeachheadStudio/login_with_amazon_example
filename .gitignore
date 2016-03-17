@@ -24,3 +24,7 @@ ExportedObj/
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
+
+# JetBrains
+.idea/
+login_with_amazon_example.sln.iml
